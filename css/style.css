@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+table{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.btn-show{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  padding: 10px 0;
+  cursor: pointer;
+}
+caption{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+tr:first-child td {
+  border: none;
+}
+
+th,
+td {
+  width: calc(100% / 3);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  border: 1px dotted gray;
+  padding: 10px 0;
+  margin: 2px;
+}
+
+td {
+  font-weight: 400;
+}
+
+.id_sort,
+.name_sort,
+.age_sort{
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+}
