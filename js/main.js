@@ -1,37 +1,37 @@
-// Получаем данные
-const DATA = "./data/big_data_persons.json",
-// ..из HTML
-  table = document.querySelector("tbody"),
-  idSort = document.querySelector(".id_sort"),
-  nameSort = document.querySelector(".name_sort"),
-  surnameSort = document.querySelector(".surname_sort"),
-  ageSort = document.querySelector(".age_sort");
+document.addEventListener("DOMContentLoaded", () => {
+  // Получаем данные
+  const DATA = "./data/big_data_persons.json",
+    // ..из HTML
+    table = document.querySelector("tbody"),
+    idSort = document.querySelector(".id_sort"),
+    nameSort = document.querySelector(".name_sort"),
+    surnameSort = document.querySelector(".surname_sort"),
+    ageSort = document.querySelector(".age_sort");
 
-// Подключаем JSONфайл
-let myObj,
-  xmlhttp = new XMLHttpRequest();
+  // Подключаем JSONфайл
+  let myObj,
+    xmlhttp = new XMLHttpRequest();
 
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    myObj = JSON.parse(this.responseText);
-    //..и кладём его в таблицу
-    myObj.forEach(function (item) {
-      let row = document.createElement("TR");
-      row.insertAdjacentHTML(
-        "afterbegin",
-        `<td class="table__id">${item.ID}</td>
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      //..и кладём его в таблицу
+      myObj.forEach(function (item) {
+        let row = document.createElement("TR");
+        row.insertAdjacentHTML(
+          "afterbegin",
+          `<td class="table__id">${item.ID}</td>
           <td class="table__name">${item.Name}</td>
           <td class="table__age">${item.Age}</td>`
-      );
-      table.appendChild(row);
-    });
-  }
-};
-xmlhttp.open("GET", DATA, true);
-xmlhttp.send();
+        );
+        table.appendChild(row);
+      });
+    }
+  };
+  xmlhttp.open("GET", DATA, true);
+  xmlhttp.send();
 
-//Сортировка по ID, фамилии и возрасту
-document.addEventListener("DOMContentLoaded", () => {
+  //Сортировка по ID, фамилии и возрасту
   const getSort = ({ target }) => {
     const order = (target.dataset.order = -(target.dataset.order || -1));
     const index = [...target.parentNode.cells].indexOf(target);

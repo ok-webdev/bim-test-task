@@ -29,11 +29,6 @@ caption{
   font-weight: 700;
   margin-bottom: 30px;
 }
-
-/* tr:first-child td {
-  border: none;
-} */
-
 th,
 td {
   width: calc(100% / 3);
@@ -48,6 +43,12 @@ td {
 
 td {
   font-weight: 400;
+}
+
+.row-delete{
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 th.sorted[data-order="1"],
